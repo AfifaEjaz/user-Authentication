@@ -37,7 +37,6 @@ const databaseName = process.env.DB_NAME;
 const URL = process.env.URL ;
 connectMongo(URL, databaseName);
 
-
 // Default route
 // app.get('/', (req, res) => {
 //   res.send('Hello World!');
