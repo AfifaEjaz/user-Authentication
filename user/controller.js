@@ -131,7 +131,7 @@ export async function resetPasswordEmail(req, res) {
             if (userRecord) {
                 const secret = userRecord._id + process.env.JWT_SECRET
                 const token = jwt.sign({ userID: userRecord._id }, secret, { expiresIn: '15m' })
-                const link = `${process.env.BASE_URL}/api/user/reset/${userRecord._id}/${token}`
+                const link = `${process.env.NODE_VERCEL_URL}/api/user/reset/${userRecord._id}/${token}`
                 console.log(link);
 
                 const info = await transporter.sendMail({

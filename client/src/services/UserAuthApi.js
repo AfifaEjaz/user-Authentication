@@ -1,11 +1,15 @@
 // Need to use the React-specific entry point to import createApi
+import dotenv from 'dotenv';
+dotenv.config();
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
+
+const BASE_URL = process.env.REACT_APP_VERCEL_URL;
 
 // Define a service using a base URL and expected endpoints
 export const userAuthApi = createApi({
     reducerPath: 'userAuthApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://user-auth-x5yj.vercel.app/api/user/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: `${BASE_URL}/api/user/` }),
     endpoints: (builder) => ({
 
       registerUser: builder.mutation({
