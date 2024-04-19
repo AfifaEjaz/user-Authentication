@@ -1,8 +1,6 @@
 // Need to use the React-specific entry point to import createApi
-import dotenv from 'dotenv';
-dotenv.config();
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 const BASE_URL = process.env.REACT_APP_VERCEL_URL;
 
